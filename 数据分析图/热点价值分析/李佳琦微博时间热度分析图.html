@@ -1,0 +1,226 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=mix-line-bar&code=PYBwLglsB2AEC8sDeAoWszGAG0iAXMmuhgE4QDmFApqYQOQCGAHhAM70A0x6L7ACsAjQwtQqhIkwATxDUGAY1LA2HbpPRKVbAMozs8ohpIKcwOrHoBiAJx36PEgF9HL9E_UYs2AEbBm4o4AZtSMYACupIYSGgAmYYwAahDUAO7isGwAFsDpZOHUnLBRjLEA8tDY0oRBjNhs1LAejugAtowUEAoAKrLRmTl5YKQFRTJyhADa9NjC1FyWPoyk9AC6TZ6SUWyYURnZuYTDBRstmYwAbtQAgmwAku00-4NHI41uzsTN6AY00LGBSTxMCMKb0QCdDoA9WIW9EAI9GALuiYYAbeMAi8owwC3DoAyvTWX08zGurDYU0cMUk40M9AUYWoFHM0i4Z2BoNg0wATAAGVkAZgAtOyABw8gCMABYGZYOdy-YKhfzxfRJbyBTzufLFdKVQBWNWcpWC1kANh1UuVrIA7MalTY-azLXzrezteoFbr7XyLc71eyHXLPa7vfa7QGheyg9aQ2HhULI0KbHaQ9L4-zE36pQnvWtNiQ-GxBMJRBZSRpyQxsqVcg5jB93MRVp5pAT2MTJEX0CXLBc6gVxRpoIxWhTAITWgAdTHuSHMAGUYPmo2EBxlgQXM7TABYYSE72AKTkrGmrpxbZ3b9E33az6D7A4YWMAPApj7OEqczudGBdL0grteWDdd6g7s77h8dbEA05DUESLIkmcl4UlC95tn0DBLCs55eDgeDzsYp7UAAYsuYRfkE4TQAokAwLAAAU2EAJSvguxTUBEpBwNhsAANSWIO9AANxnDWVaoUyUxCgamoima6iagaImauosYGmaBrqKympmhJaCxly6mwKyIa6eoWlcvyIrKfyqlcnJZn8jYcnsrKNloOJopCuoIoikZRm2ayIpibJaBmpq7Lsu5_LKSG0msnJXIKey6g2KJoUafyArsqsrhZq2sAwQwCLwRgiGLMseWYOhEAEHRGjYXhH4EWIi7EaRUBwFRv60ZlWyMZELG_uxnE8XxTQAYJCTCSKyXqNJXKxRpApKWgrL8hZ83RXJC2JTpXKqaZ7JLbAQpmiG626Qac06fysbKTtQqRUlooKQZXJcm5Ln-Y6IoObAbneWFbnKWaNhcmlkjfAumXZZYqLFQV9DIcV3gYRVkhVfhq51URJFkc1NGIxoURMd1W6NBx9Bcbx9H7u4w0gsJum7W561ChdaCnadQpbRp4lySKL2wFNN2wAau1mvzBp2VFAPKVpZnKTYPMitJPOStpsrBUDzgZdB_YUliUMTJYszQPMqENoSdz_NQAR7ahJW4GVmGVb-1WfmjDWY5R2PtSQeNdbA2FkwuFMHnEI0smzbOsgAdHYQUx7H_NjSd7IR5tsep6z0nvRHsrKbpNgR5q_Mify_IR6JclmkZBoRz5BkCtzEfS_Nz2RwaJnzcZFcR3Zqdx3FJ2R3YBn8qJXJR6dm3FwKUfrQDwvJVHIvsgaNgcnnnPzfJS9R7tsrC0nT1yddQXJ-XNj8ma29q_xsBpU43FAA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/china.js"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      crossStyle: {
+        color: '#999'
+      }
+    }
+  },
+  toolbox: {
+    feature: {
+      dataView: { show: true, readOnly: false },
+      magicType: { show: true, type: ['line', 'bar'] },
+      restore: { show: true },
+      saveAsImage: { show: true }
+    }
+  },
+  legend: {
+    data: ['点赞', '评论', '转发', '热度']
+  },
+  xAxis: [
+    {
+      type: 'category',
+      data: ['2023-08-14',
+ '2023-08-18',
+ '2023-08-23',
+ '2023-08-25',
+ '2023-08-26',
+ '2023-08-27',
+ '2023-09-02',
+ '2023-09-05',
+ '2023-09-07',
+ '2023-09-08',
+ '2023-09-09',
+ '2023-09-10',
+ '2023-09-10',
+ '2023-09-11',
+ '2023-09-19',
+ '2023-10-08',
+ '2023-10-08',
+ '2023-10-09'],
+      axisPointer: {
+        type: 'shadow'
+      }
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value',
+      name: '次数',
+      axisLabel: {
+        formatter: '{value}'
+      }
+    },
+    {
+      type: 'value',
+      name: '热度值',
+      axisLabel: {
+        formatter: '{value}'
+      }
+    }
+  ],
+  series: [
+    {
+      name: '点赞',
+      type: 'bar',
+      tooltip: {
+        valueFormatter: function (value) {
+          return value + '次';
+        }
+      },
+      data: [16547,
+ 56165,
+ 19676,
+ 2577,
+ 1937,
+ 21021,
+ 37384,
+ 28573,
+ 18589,
+ 10189,
+ 47141,
+ 443838,
+ 1024545,
+ 7500438,
+ 210612,
+ 13670,
+ 9658,
+ 18080]
+    },
+    {
+      name: '评论',
+      type: 'bar',
+      tooltip: {
+        valueFormatter: function (value) {
+          return value + '次';
+        }
+      },
+      data: [1480,
+ 6130,
+ 1086,
+ 283,
+ 236,
+ 1288,
+ 2357,
+ 2803,
+ 17108,
+ 2166,
+ 2819,
+ 20312,
+ 181467,
+ 333441,
+ 70549,
+ 4424,
+ 2144,
+ 2793]
+    },
+        {
+      name: '转发',
+      type: 'bar',
+      tooltip: {
+        valueFormatter: function (value) {
+          return value + '次';
+        }
+      },
+      data: [1213,
+ 448,
+ 119,
+ 6,
+ 6,
+ 157,
+ 147,
+ 141,
+ 302,
+ 63,
+ 72,
+ 601,
+ 1393,
+ 23785,
+ 291,
+ 4611,
+ 2027,
+ 1804]
+    },
+    {
+      name: '热度',
+      type: 'line',
+      yAxisIndex: 1,
+      tooltip: {
+        valueFormatter: function (value) {
+          return value;
+        }
+      },
+      data: [15152.990000000002,
+ 48660.350000000006,
+ 16149.18,
+ 2219.52,
+ 1688.65,
+ 17386.45,
+ 30841.85,
+ 24412.64,
+ 28473.010000000002,
+ 9662.99,
+ 38653.96,
+ 358808.98,
+ 937280.92,
+ 6069209.47,
+ 219606.93,
+ 18720.34,
+ 11200.3,
+ 17987.93]
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

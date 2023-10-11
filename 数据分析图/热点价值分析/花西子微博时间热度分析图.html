@@ -1,0 +1,271 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=mix-line-bar&code=PYBwLglsB2AEC8sDeAoWszGAG0iAXMmuhgE4QDmFApqYQOQCGAHhAM70A0x6L7ACsAjQwtQqhIkwATxDUGAY1LA2HbpPRKVbAMozs8ohpIKcwOrHoBiAJx36PEgF9HL9E_UYs2AEbBm4o4AZtSMYACupIYSGgAmYYwAahDUAO7isGwAFsDpZOHUnLBRjLEA8tDY0oRBjNhs1LAejugAtowUEAoAKrLRmTl5YKQFRTJyhADa9NjC1FyWPoyk9AC6TZ6SUWyYURnZuYTDBRstmYwAbtQAgmwAku00-4NHI41uzsTN6AY00LGBSTxMCMKb0QCdDoA9WIW9EAI9GALuiYYAbeMAi8owwC3DoAyvTWX08zGurDYU0cMUk40M9AUYWoFHM0i4Z2BoNg0wATAAGVkAZgAtOyABw8gCM7IZxksHO5fMFQqFYuM9ElvIFwtZ8o0is5yplXPVkk1UpVQoALHqSAbtcKAGxm9AW6XW20SrUOoX8p32o02D1Kh2stWbfW-lX-n0ukO6wPm4OC1kAVjDhsFXLlUbtwZsfJtaedhsz7OzZ1zyszIsTJeFkaLntL3pzNeFderGZ5ofrLe55b5mdZhfFDdZ7vb4Z7Q-bI9bTf7vpFfLVqzTfDYgmEogspI05IY2VKuQcxg-7mIC-I0gJ7GJkg36C3lgudQKtugjFaFMAhNaAB1NbUuADKMHzUNggLikE5jtGAa4MEg97YAUTj7hoh6nFeZy3vQMGPmmz6vgwWKADwK36En-AFAUYIFgWEkGWNBD7UPBZxIR8J7oA05DUESLIkmc2EUlCtpoUsKxppgOB4MBxgYdQABiFEQWIsBBOE0AKJAMCwAAFJJACUZHisU1ARKQcCSbAADUlhvvQADcRZNAxaZMlM_JWuoADsXLqPyrLqP6rLGuoVouWgrk2Farlueyrn8m5QpuUFsCyvFJreWgrI2P5qXshlCUpuFqW9nlCXGjY_I2OoXKcol6hxmlcZxuoNi9lyxopbA_JxkKNiFVanINVaNjsj5pWuT19XBUK8aDalxqBeoIp-YVrKuSNqyuIG16wDxDAIvxfQMIJ_HeGJukaJJMmkOBVGKcpqlwJptE6RtWwGZExm0WZFnWbZSHuA5CRTFaHloHG0XA0DsCsm66jFXNcZWrFaA2HGZXA1NsA1dVaP8mjIoIwl7JjQlpXlVFc0EyjCUg65eNcvyXKEzVBN4-1IWLUtnkcnNXLNSDDUmvFxpQ8FrmtcaXmrZI3zihtW2WKiu0TIsyyHaJEAECdkhnbJV1KSpUB3dpGsaFEhlvbBjTmfQlk2XpP3IXE_0sim5UU1yhU2ODzVzcazvBeynvZYO5We61XKh6L2WytlcMk61IrgxNXmE2lgPOXFDUJ8a_vsq7I1o3GhXGsncYS8463cS-FJYgrFKzNA8xpmehJ3P81ABAlwlHWr4mnbR52XfJ1162p93m49tnoCbr2wJJNvinbUtAo7kwmvyAB08be6ya-dd7XJr5Fc0ldvBZzX5a8dZ5dPsgfAWNTYa_tWfD9Cq57Lvx_n-9Wgidr1aWdfy_njIUVpt5eR8gWHeADAEfxplnHeFMlrGh3gnSGQod6gwhiAuMa9lpnyLjgsOMD36tT8iDOGj8KowNFlyEqyDCojS8v1P-hMfar33r2Ny3I16C2Ie_ZmkN17J2NCFOGOC6YBR6hVXBPUYF439OlHhnk4Y30vqlOq290qlyPOgVaTgrJAA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/china.js"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      crossStyle: {
+        color: '#999'
+      }
+    }
+  },
+  toolbox: {
+    feature: {
+      dataView: { show: true, readOnly: false },
+      magicType: { show: true, type: ['line', 'bar'] },
+      restore: { show: true },
+      saveAsImage: { show: true }
+    }
+  },
+  legend: {
+    data: ['点赞', '评论', '转发', '热度']
+  },
+  xAxis: [
+    {
+      type: 'category',
+      data: ['2023-08-10',
+       '2023-08-11',
+       '2023-08-12',
+       '2023-08-13',
+       '2023-08-14',
+       '2023-08-16',
+       '2023-08-16',
+       '2023-08-18',
+       '2023-08-19',
+       '2023-08-22',
+       '2023-08-22',
+       '2023-08-23',
+       '2023-08-25',
+       '2023-08-31',
+       '2023-09-06',
+       '2023-09-06',
+       '2023-09-10',
+       '2023-09-13',
+       '2023-09-19',
+       '2023-09-19',
+       '2023-09-22',
+       '2023-09-23',
+       '2023-09-26',
+       '2023-09-28',
+       '2023-09-28',
+       '2023-09-29',
+       '2023-10-02'],
+      axisPointer: {
+        type: 'shadow'
+      }
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value',
+      name: '次数',
+      axisLabel: {
+        formatter: '{value}'
+      }
+    },
+    {
+      type: 'value',
+      name: '热度值',
+      axisLabel: {
+        formatter: '{value}'
+      }
+    }
+  ],
+  series: [
+    {
+      name: '点赞',
+      type: 'bar',
+      tooltip: {
+        valueFormatter: function (value) {
+          return value + '次';
+        }
+      },
+      data: [86,
+ 73,
+ 82,
+ 2224,
+ 66,
+ 7967,
+ 7078,
+ 71,
+ 76,
+ 116,
+ 142,
+ 294,
+ 204,
+ 1317,
+ 2267,
+ 14989,
+ 302116,
+ 52955,
+ 926342,
+ 85197,
+ 602,
+ 9690,
+ 2897605,
+ 71250,
+ 2466,
+ 10247,
+ 2776]
+    },
+    {
+      name: '评论',
+      type: 'bar',
+      tooltip: {
+        valueFormatter: function (value) {
+          return value + '次';
+        }
+      },
+      data: [63,
+ 58,
+ 53,
+ 218,
+ 49,
+ 1561,
+ 959,
+ 50,
+ 52,
+ 50,
+ 80,
+ 101,
+ 105,
+ 189,
+ 378,
+ 1059,
+ 15871,
+ 3835,
+ 52051,
+ 85797,
+ 227,
+ 820,
+ 133458,
+ 9146,
+ 418,
+ 772,
+ 482]
+    },
+        {
+      name: '转发',
+      type: 'bar',
+      tooltip: {
+        valueFormatter: function (value) {
+          return value + '次';
+        }
+      },
+      data: [31,
+ 39,
+ 37,
+ 93,
+ 34,
+ 1431,
+ 703,
+ 34,
+ 28,
+ 33,
+ 32,
+ 32,
+ 32,
+ 44,
+ 114,
+ 56,
+ 372,
+ 103,
+ 12825,
+ 296386,
+ 76,
+ 93,
+ 140309,
+ 3760,
+ 57,
+ 45,
+ 25]
+    },
+    {
+      name: '热度',
+      type: 'line',
+      yAxisIndex: 1,
+      tooltip: {
+        valueFormatter: function (value) {
+          return value;
+        }
+      },
+      data: [148.25,
+ 142.19,
+ 143.07,
+ 1982.06,
+ 124.51,
+ 8830.0,
+ 6929.85,
+ 129.17000000000002,
+ 128.64000000000001,
+ 162.82,
+ 206.14000000000001,
+ 340.19,
+ 274.13,
+ 1211.18,
+ 2165.77,
+ 12455.320000000002,
+ 245856.83000000002,
+ 43984.7,
+ 768269.65,
+ 431483.26,
+ 723.4100000000001,
+ 8218.5,
+ 2479565.83,
+ 66030.76000000001,
+ 2294.4,
+ 8560.51,
+ 2552.94]
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
